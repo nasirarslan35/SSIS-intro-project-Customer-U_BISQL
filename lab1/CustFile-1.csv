@@ -1,0 +1,10 @@
+CustID,CustName,CustAmount,SalesDate,CountryName,StateName,ProductName,SalesPersonName
+83,Jhon,130,1/10/2020,Turkey,Antalya,Sneakers,Nasir
+84,Frank,250,2/5/2022,Spain,Barcelona,Tie,Jordan
+85,Nasir,4500,1/2/2023,US,NewYork,Jeans,Arslan
+86,Jack,5300,3/8/2022,Trukey,Mulga,Boxer,Shami
+87,Ella,7800,5/9/2022,Spain,Valencia,Tie,Nasir
+88,Toni,-2,3/12/2024,Turkey,Kayseri,Boxer,Arslan
+89,Kate,1550,4/5/2024,US,NewYork,Sneakers,Jordan
+90,Arslan,0,5/7/2024,Turkey,Aydin,Boxer,Shami
+91,AB,850,5/11/23,US,NewYork,Sneakers,Nasir
