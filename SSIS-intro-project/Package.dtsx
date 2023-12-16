@@ -1,0 +1,1475 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/29/2023 10:48:27 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NASIR"
+  DTS:CreatorName="NASIR\nasir"
+  DTS:DTSID="{1A762E62-8691-4DDF-9607-99517DD3300E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{53543E6F-081E-4C8C-8D13-05A714410A9B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV connection manger1]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="CSV connection manger"
+      DTS:DTSID="{49BF39B5-6A7A-4210-849D-AB824A4C14CC}"
+      DTS:ObjectName="CSV connection manger1">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustID"
+              DTS:DTSID="{4576F9D0-88F0-4966-A256-5103CAF619BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustName"
+              DTS:DTSID="{3F8D73A4-87A3-475E-BF6B-B3FE46F58364}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustAmount"
+              DTS:DTSID="{802BD0BE-956F-40F6-AECF-C387E91827CA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesDate"
+              DTS:DTSID="{8E5D2891-B75D-45A4-A486-EC5B51A5545D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountryName"
+              DTS:DTSID="{A42E816D-541E-4605-A522-BC35F8ABF5B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateName"
+              DTS:DTSID="{DC475CC2-C410-4A83-8C39-D5DA651914CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductName"
+              DTS:DTSID="{D789D02C-2BBA-499F-949A-C2B7753F06B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesPersonName"
+              DTS:DTSID="{749781D4-8B4D-4445-BB3C-D1D66A739A0C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[errorSink]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Destination of Error Entries"
+      DTS:DTSID="{63DC519E-79EE-4FB8-A2F6-25E4ADE66F3C}"
+      DTS:ObjectName="errorSink">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\nasir\OneDrive\Desktop\COURSES\Error.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustID"
+              DTS:DTSID="{86A25883-A2AD-4E23-ACCF-265116D35569}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustName"
+              DTS:DTSID="{9A71E7BE-D03C-4B0F-9A8A-44282B3CB5B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustAmount"
+              DTS:DTSID="{E2C5613A-3DE6-4B1C-8A02-53F0C57BE9DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesDate"
+              DTS:DTSID="{0E7E2CFD-4F36-4EFD-A214-0E0CE866F3B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CountryName"
+              DTS:DTSID="{39161E59-9201-4839-BD57-F9F1B4F0E4C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateName"
+              DTS:DTSID="{AE021A2F-0AEF-4E94-BD5E-1DC36C28D656}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductName"
+              DTS:DTSID="{9B8B3A12-A752-4153-81D3-D3C82E3E06C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesPersonName"
+              DTS:DTSID="{9353F3B4-E5B0-4A9D-B101-FCD3545B6BFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustAmountCY"
+              DTS:DTSID="{0FE020FA-F6EE-4F9D-A8A0-A73EA2BC3111}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{09DA182A-47E2-4F15-B7FE-5E66BC68E8F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{F6D6BD19-BD02-457B-986A-CBC9C076CA9A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NASIR.CustTable]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{EF1DAFF7-2F39-4567-AB7F-9D2D5CA06334}"
+      DTS:ObjectName="NASIR.CustTable">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=NASIR;Initial Catalog=CustTable;Integrated Security=True;Trust Server Certificate=True;Application Name=SSIS-Package-{EF1DAFF7-2F39-4567-AB7F-9D2D5CA06334}NASIR.CustTable;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NASIR.CustTable 1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{1072ED06-F467-4AE8-9111-54DC23FAA3F2}"
+      DTS:ObjectName="NASIR.CustTable 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=NASIR;Initial Catalog=CustTable;Integrated Security=True;Encrypt=False;Application Name=&quot;SSIS-Package-{1072ED06-F467-4AE8-9111-54DC23FAA3F2}NASIR.CustTable 1&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{197AB3AC-B8AF-43E5-998A-A4FD975D771D}"
+      DTS:ObjectName="FullFilePath">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\Users\nasir\OneDrive\Desktop\COURSES\MSBI\lab1-new</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{52FA9771-56CB-4C17-BF1D-9A1C8BF045CE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Bulkfile loop"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{8A766E4C-1BDB-4156-A726-8639F6B8400D}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Bulkfile loop">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{AF64B664-B574-4715-A31E-80DC0C654D0F}"
+        DTS:ObjectName="{AF64B664-B574-4715-A31E-80DC0C654D0F}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[$Package::FullFilePath]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\nasir\OneDrive\Desktop\COURSES\MSBI\lab1-new" />
+            <FEFEProperty
+              FileSpec="*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Bulkfile loop\Load Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{007C741B-1C2F-4496-8353-0BA82D58D459}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency)"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="CustAmount (String to Currency)"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Inputs[Data Conversion Input].Columns[CustAmount]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustAmount"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustAmount]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Output].Columns[CustAmountCY]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Output].Columns[CustAmountCY]"
+                          name="CustAmountCY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustAmount]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Bulkfile loop\Load Data\Error Values txt"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="8192"
+                  name="Error Values txt"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Bulkfile loop\Load Data\Error Values txt.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[errorSink]"
+                      connectionManagerRefId="Package.ConnectionManagers[errorSink]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].Columns[CustID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustID"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[CustID]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustID]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].Columns[CustName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustName"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[CustName]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustName]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].Columns[CustAmount]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustAmount"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[CustAmount]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustAmount]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].Columns[SalesDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SalesDate"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[SalesDate]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[SalesDate]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].Columns[CountryName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CountryName"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[CountryName]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CountryName]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].Columns[StateName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="StateName"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[StateName]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[StateName]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].Columns[ProductName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ProductName"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[ProductName]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].Columns[SalesPersonName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SalesPersonName"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[SalesPersonName]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[SalesPersonName]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].Columns[CustAmountCY]"
+                          cachedDataType="cy"
+                          cachedName="CustAmountCY"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[CustAmountCY]"
+                          lineageId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Output].Columns[CustAmountCY]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[CustID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustID" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[CustName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[CustAmount]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustAmount" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[SalesDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SalesDate" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[CountryName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CountryName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[StateName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="StateName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[ProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[SalesPersonName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SalesPersonName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[CustAmountCY]"
+                          dataType="cy"
+                          name="CustAmountCY" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                          dataType="i4"
+                          name="ErrorCode" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                          dataType="i4"
+                          name="ErrorColumn" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Bulkfile loop\Load Data\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="8192"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Bulkfile loop\Load Data\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV connection manger1]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV connection manger1]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CustID]"
+                          length="50"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustID]"
+                          name="CustID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CustName]"
+                          length="50"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustName]"
+                          name="CustName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustAmount]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CustAmount]"
+                          length="50"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustAmount]"
+                          name="CustAmount"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[SalesDate]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesDate]"
+                          length="50"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[SalesDate]"
+                          name="SalesDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CountryName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CountryName]"
+                          length="50"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CountryName]"
+                          name="CountryName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[StateName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StateName]"
+                          length="50"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[StateName]"
+                          name="StateName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductName]"
+                          length="50"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[ProductName]"
+                          name="ProductName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[SalesPersonName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesPersonName]"
+                          length="50"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[SalesPersonName]"
+                          name="SalesPersonName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CustID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustID" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CustName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CustAmount]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CustAmount" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SalesDate" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CountryName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CountryName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StateName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="StateName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ProductName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ProductName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesPersonName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SalesPersonName" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Lessthan and Equal to zero"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Inputs[Conditional Split Input].Columns[CustAmountCY]"
+                          cachedDataType="cy"
+                          cachedName="CustAmountCY"
+                          lineageId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Output].Columns[CustAmountCY]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Outputs[Error]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Error"
+                      synchronousInputId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">((#{Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Output].Columns[CustAmountCY]} &lt; 0) || (#{Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Output].Columns[CustAmountCY]} == 0))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">((CustAmountCY &lt; 0) || (CustAmountCY == 0))</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Bulkfile loop\Load Data\Lowercase Name"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Lowercase Name"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Bulkfile loop\Load Data\Lowercase Name.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\Lowercase Name.Inputs[Derived Column Input].Columns[CustName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustName"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustName]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[LOWER](#{Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustName]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LOWER(CustName)</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Bulkfile loop\Load Data\Lowercase Name.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Bulkfile loop\Load Data\Lowercase Name.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Bulkfile loop\Load Data\Lowercase Name.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Bulkfile loop\Load Data\Lowercase Name.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Lowercase Name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Bulkfile loop\Load Data\Lowercase Name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\Lowercase Name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Bulkfile loop\Load Data\Lowercase Name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Bulkfile loop\Load Data\SQLDestination"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  name="SQLDestination"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The Destination database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."CustTable"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Bulkfile loop\Load Data\SQLDestination.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[NASIR.CustTable 1]"
+                      connectionManagerRefId="Package.ConnectionManagers[NASIR.CustTable 1]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ADO NET Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].Columns[CustID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustID"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[CustID]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustID]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].Columns[CustName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustName"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[CustName]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustName]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].Columns[CustAmount]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CustAmount"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[CustAmount]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CustAmount]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].Columns[SalesDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SalesDate"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[SalesDate]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[SalesDate]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].Columns[CountryName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CountryName"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[CountryName]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[CountryName]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].Columns[StateName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="StateName"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[StateName]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[StateName]" />
+                        <inputColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].Columns[SalesPersonName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SalesPersonName"
+                          externalMetadataColumnId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[SalesPersonName]"
+                          lineageId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output].Columns[SalesPersonName]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[CustID]"
+                          dataType="wstr"
+                          length="50"
+                          name="CustID" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[CustName]"
+                          dataType="wstr"
+                          length="50"
+                          name="CustName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[CustAmount]"
+                          dataType="numeric"
+                          name="CustAmount"
+                          precision="19"
+                          scale="255" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[SalesDate]"
+                          dataType="dbTimeStamp"
+                          name="SalesDate" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[CountryName]"
+                          dataType="wstr"
+                          length="50"
+                          name="CountryName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[StateName]"
+                          dataType="wstr"
+                          length="50"
+                          name="StateName" />
+                        <externalMetadataColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input].ExternalColumns[SalesPersonName]"
+                          dataType="wstr"
+                          length="50"
+                          name="SalesPersonName" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Bulkfile loop\Load Data\SQLDestination.Outputs[ADO NET Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ADO NET Destination Error Output"
+                      synchronousInputId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Bulkfile loop\Load Data\SQLDestination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Bulkfile loop\Load Data\SQLDestination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Bulkfile loop\Load Data\SQLDestination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Bulkfile loop\Load Data.Paths[Conditional Split Default Output]"
+                  endId="Package\Bulkfile loop\Load Data\SQLDestination.Inputs[ADO NET Destination Input]"
+                  name="Conditional Split Default Output"
+                  startId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Outputs[Conditional Split Default Output]" />
+                <path
+                  refId="Package\Bulkfile loop\Load Data.Paths[Data Conversion Output]"
+                  endId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Inputs[Conditional Split Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Bulkfile loop\Load Data.Paths[Derived Column Output]"
+                  endId="Package\Bulkfile loop\Load Data\CustAmount (String to Currency).Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\Bulkfile loop\Load Data\Lowercase Name.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Bulkfile loop\Load Data.Paths[Error]"
+                  endId="Package\Bulkfile loop\Load Data\Error Values txt.Inputs[Flat File Destination Input]"
+                  name="Error"
+                  startId="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero.Outputs[Error]" />
+                <path
+                  refId="Package\Bulkfile loop\Load Data.Paths[Flat File Source Output]"
+                  endId="Package\Bulkfile loop\Load Data\Lowercase Name.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Bulkfile loop\Load Data\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{5FAA65E8-12AD-44F9-8227-44541951440D}"
+          DTS:ObjectName="{5FAA65E8-12AD-44F9-8227-44541951440D}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FilePath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Bulkfile loop\Load Data"
+          TopLeft="25.2571435018463,7.67058812268455" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204.8,104"
+          Size="204.8,147.2"
+          Id="Package\Bulkfile loop"
+          TopLeft="277.857143448628,77.99999993163" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Bulkfile loop\Load Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Bulkfile loop\Load Data\SQLDestination"
+          TopLeft="245.00000052154,311.235293844837" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Bulkfile loop\Load Data\Error Values txt"
+          TopLeft="613.571429877561,326.52941147849" />
+        <NodeLayout
+          Size="205.6,41.6"
+          Id="Package\Bulkfile loop\Load Data\Lessthan and Equal to zero"
+          TopLeft="372.857143650858,225.588235096381" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Bulkfile loop\Load Data\Lowercase Name"
+          TopLeft="502.857143927594,54.2941175994678" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Bulkfile loop\Load Data\Flat File Source"
+          TopLeft="123.57142883448,19.1176470420662" />
+        <NodeLayout
+          Size="232.8,41.6"
+          Id="Package\Bulkfile loop\Load Data\CustAmount (String to Currency)"
+          TopLeft="393.571429409239,140.705882229607" />
+        <EdgeLayout
+          Id="Package\Bulkfile loop\Load Data.Paths[Flat File Source Output]"
+          TopLeft="273.97142883448,39.9176470420662">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="228.885715093114,35.1764705574016"
+              Start="0,0"
+              End="221.385715093114,35.1764705574016">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="110.442857546557,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110.442857546557,0"
+                    Point2="114.442857546557,0"
+                    Point3="114.442857546557,4" />
+                  <mssgle:LineSegment
+                    End="114.442857546557,31.1764705574016" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.442857546557,31.1764705574016"
+                    Point2="114.442857546557,35.1764705574016"
+                    Point3="118.442857546557,35.1764705574016" />
+                  <mssgle:LineSegment
+                    End="221.385715093114,35.1764705574016" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Bulkfile loop\Load Data.Paths[Error]"
+          TopLeft="508.590476984191,267.188235096381">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="180.58095289337,59.3411763821094"
+              Start="0,0"
+              End="180.58095289337,51.8411763821094">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.0114103661972" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.0114103661972"
+                    Point2="0,24.0114103661972"
+                    Point3="4,24.0114103661972" />
+                  <mssgle:LineSegment
+                    End="176.58095289337,24.0114103661972" />
+                  <mssgle:CubicBezierSegment
+                    Point1="176.58095289337,24.0114103661972"
+                    Point2="180.58095289337,24.0114103661972"
+                    Point3="180.58095289337,28.0114103661972" />
+                  <mssgle:LineSegment
+                    End="180.58095289337,51.8411763821094" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="78.761785040435,29.0114103661972,23.0573828125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Bulkfile loop\Load Data.Paths[Derived Column Output]"
+          TopLeft="582.057143927594,95.8941175994678">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-72.0857145183547,44.8117646301392"
+              Start="0,0"
+              End="-72.0857145183547,37.3117646301392">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4058823150696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4058823150696"
+                    Point2="0,22.4058823150696"
+                    Point3="-4,22.4058823150696" />
+                  <mssgle:LineSegment
+                    End="-68.0857145183547,22.4058823150696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-68.0857145183547,22.4058823150696"
+                    Point2="-72.0857145183547,22.4058823150696"
+                    Point3="-72.0857145183547,26.4058823150696" />
+                  <mssgle:LineSegment
+                    End="-72.0857145183547,37.3117646301392" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Bulkfile loop\Load Data.Paths[Data Conversion Output]"
+          TopLeft="509.971429409239,182.305882229607">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34.3142857583812,43.2823528667737"
+              Start="0,0"
+              End="-34.3142857583812,35.7823528667737">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6411764333869" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6411764333869"
+                    Point2="0,21.6411764333869"
+                    Point3="-4,21.6411764333869" />
+                  <mssgle:LineSegment
+                    End="-30.3142857583812,21.6411764333869" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.3142857583812,21.6411764333869"
+                    Point2="-34.3142857583812,21.6411764333869"
+                    Point3="-34.3142857583812,25.6411764333869" />
+                  <mssgle:LineSegment
+                    End="-34.3142857583812,35.7823528667737" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Bulkfile loop\Load Data.Paths[Conditional Split Default Output]"
+          TopLeft="475.657143650858,267.188235096381">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-155.457143129317,44.0470587484559"
+              Start="0,0"
+              End="-155.457143129317,36.5470587484559">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.023529374228" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.023529374228"
+                    Point2="0,22.023529374228"
+                    Point3="-4,22.023529374228" />
+                  <mssgle:LineSegment
+                    End="-151.457143129317,22.023529374228" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-151.457143129317,22.023529374228"
+                    Point2="-155.457143129317,22.023529374228"
+                    Point3="-155.457143129317,26.023529374228" />
+                  <mssgle:LineSegment
+                    End="-155.457143129317,36.5470587484559" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-148.342477814659,27.023529374228,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Bulkfile loop\Load Data\SQLDestination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
